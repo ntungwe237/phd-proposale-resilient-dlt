@@ -14,11 +14,14 @@ This research proposes a novel, multi-layered defensive framework that combines 
 **Approach:** I will design a domain-specific language (DSL) or use interactive theorem provers (like Coq or Lean) to create a static analysis pipeline. This pipeline will ingest transaction types and state transitions, constructing mathematical proofs to guarantee that an administrative operation (like code delegation or wallet upgrade) cannot execute without meeting strict multi-sig or timelock parameters, regardless of the transaction's structure.
 
 **Phase 2: Contextual Multi-Party Computation (C-MPC)**
+
 **Objective:** Ensure that an automated signing engine cannot be tricked by a compromised container or laptop.
+
 **Approach:** Traditional MPC requires multiple nodes to sign a transaction, but if all nodes are fed the same malicious data from a corrupted master controller, they will still sign it. I will research a "Contextual MPC" protocol where individual signing nodes independently gather environmental metadata (e.g., origin nonces, network topography, hardware security module state, and historical transaction volume metrics). The nodes will only generate their cryptographic fragment if the metadata matches strict invariants, eliminating the master controller as a single point of failure.
 
 **Phase 3: Hardware-Enforced Zero-Trust Execution**
 **Objective:** Isolate critical system flows completely from the developer's traditional operating system.
+
 **Approach:** I will explore architecture designs utilizing Trusted Execution Environments (TEEs) such as Intel SGX or AWS Nitro Enclaves. My research will investigate how to anchor DevOps administration pipelines directly within an isolated hardware enclave, forcing external command requests to prove their execution environment via remote attestation before interacting with live cloud controllers
 
 ## 📂 Repository Structure
