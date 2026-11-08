@@ -9,8 +9,11 @@ Modern enterprise cryptocurrency platforms and decentralized architectures rely 
 This research proposes a novel, multi-layered defensive framework that combines Formal Program Verification with Contextual Multi-Party Computation (C-MPC). By mathematically proving the safety boundaries of protocol upgrades prior to integration and binding execution keys to immutable environmental state properties, this architecture aims to cryptographically decouple authorization from the integrity of individual system nodes. The ultimate objective is to design distributed execution pipelines that maintain strict Byzantine fault tolerance even under total local endpoint compromise.
 
 ## 🚀 Methodology and Research Objectives
+
 **Phase 1: Formal Verification of Protocol Extensions**
+
 **Objective:** Prevent protocol design blind spots by forcing code to mathematically prove its security boundaries before interacting with enterprise funds.
+
 **Approach:** I will design a domain-specific language (DSL) or use interactive theorem provers (like Coq or Lean) to create a static analysis pipeline. This pipeline will ingest transaction types and state transitions, constructing mathematical proofs to guarantee that an administrative operation (like code delegation or wallet upgrade) cannot execute without meeting strict multi-sig or timelock parameters, regardless of the transaction's structure.
 
 **Phase 2: Contextual Multi-Party Computation (C-MPC)**
@@ -20,6 +23,7 @@ This research proposes a novel, multi-layered defensive framework that combines 
 **Approach:** Traditional MPC requires multiple nodes to sign a transaction, but if all nodes are fed the same malicious data from a corrupted master controller, they will still sign it. I will research a "Contextual MPC" protocol where individual signing nodes independently gather environmental metadata (e.g., origin nonces, network topography, hardware security module state, and historical transaction volume metrics). The nodes will only generate their cryptographic fragment if the metadata matches strict invariants, eliminating the master controller as a single point of failure.
 
 **Phase 3: Hardware-Enforced Zero-Trust Execution**
+
 **Objective:** Isolate critical system flows completely from the developer's traditional operating system.
 
 **Approach:** I will explore architecture designs utilizing Trusted Execution Environments (TEEs) such as Intel SGX or AWS Nitro Enclaves. My research will investigate how to anchor DevOps administration pipelines directly within an isolated hardware enclave, forcing external command requests to prove their execution environment via remote attestation before interacting with live cloud controllers
